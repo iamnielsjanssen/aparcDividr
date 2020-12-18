@@ -58,7 +58,7 @@ labs = fslut[fslut$V1 %in% roinums,]
 
 # copy and remove all unwanted rois
 newaparc = aparc
-newaparc[!newaparc %in% roinums]=0
+newaparc[]=0L
 
 # do work
 cat("Dividing Rois\n")
@@ -105,14 +105,13 @@ for (rn in roinums){
   # concatenate each label with the current roinum
   # newroi[newroi>1] = as.numeric(paste(rn,newroi[newroi>1],sep=""))
   
-  newaparc[newaparc==rn] = 0
   newaparc = newaparc + newroi
   globallabel=globallabel+27
 }
-maxlab = max(as.numeric(newaparc))
-# Some output
-cat("New labels run from 1 to", maxlab,"(check file",outlabs,"for details)\n")
 
+# Some output
+maxlab = max(as.numeric(newaparc))
+cat("New labels run from 1 to", maxlab,"(check file",outlabs,"for details)\n")
 
 # save new aparc+aseg file
 cat("Writing new nifti:",outnifti,"\n")
