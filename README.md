@@ -4,4 +4,4 @@
 
 
 
-[hippo](https://media.giphy.com/media/xxuPSDOx8SitnKB1Rw/giphy.gif)
+![hippo](https://github.com/iamnielsjanssen/aparcDividr/blob/master/aparc_dividr_loop.gif)
