@@ -5,14 +5,4 @@ This program divides each area from the aparc+aseg atlas into 27 new equally siz
 
 ![hippo](https://github.com/iamnielsjanssen/aparcDividr/blob/master/aparc_dividr_loop.gif)
 
-5
-​
-6
-​
-
-8
-​
-9
-T
-
 # details
