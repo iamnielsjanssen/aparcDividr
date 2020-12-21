@@ -28,5 +28,7 @@ The resulting file could be used in a FSL processing pipeline using the followin
 
 `fslmeants -i <file_with_FC_values> -o <FC_values>.txt --label=aparc+aseg_dividr.nii.gz --transpose`
 
+In the resulting file FC_values.txt, the row number would indicate the average value for each label in the aparc+aseg_dividr file. 
+
 # comments
 Please send any comments and suggestions to my email address.
