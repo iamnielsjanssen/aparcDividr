@@ -61,7 +61,7 @@ newaparc = aparc
 newaparc[]=0L
 
 # do work
-cat("Dividing Rois\n")
+cat("\nDividing Rois:\n")
 globallabel=0
 for (rn in roinums){
   cat("roinum:", rn,"\n")
@@ -102,16 +102,15 @@ for (rn in roinums){
   # apply the grid to the roi
   newroi = roi * mat
   
-  # concatenate each label with the current roinum
-  # newroi[newroi>1] = as.numeric(paste(rn,newroi[newroi>1],sep=""))
-  
+  # update atlas and counter
   newaparc = newaparc + newroi
   globallabel=globallabel+27
 }
 
 # Some output
 maxlab = max(as.numeric(newaparc))
-cat("New labels run from 1 to", maxlab,"(check file",outlabs,"for details)\n")
+numlabs= length(unique(as.numeric(newaparc)))
+cat("Total labels in new atlas:", numlabs,"(check file",outlabs,"for details)\n")
 
 # save new aparc+aseg file
 cat("Writing new nifti:",outnifti,"\n")
