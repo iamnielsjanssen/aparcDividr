@@ -39,6 +39,7 @@ if (!file.exists(infile)){
 
 # strip extension and set output name (assume path/to/file.nii.gz)
 outfile=basename(tools::file_path_sans_ext(tools::file_path_sans_ext(infile)))
+outpath=dirname(infile)
 outnifti=paste(outfile,"_dividr.nii.gz",sep="")
 outlabs=paste(outfile,"_labels.txt",sep="")
 
@@ -114,11 +115,11 @@ cat("Total labels in new atlas:", numlabs,"(check file",outlabs,"for details)\n"
 
 # save new aparc+aseg file
 cat("Writing new nifti:",outnifti,"\n")
-writeNifti(newaparc, file=outnifti)
+writeNifti(newaparc, file=paste(outpath,"/",outnifti,sep=""))
 
 # construct and save label file
 labrep = paste(gl(length(labs$V2),27,labels=labs$V2),1:27,sep="")
 labtot = paste(gl(length(labs$V2),27,labels=labs$V2),1:globallabel,sep="")
 labs = data.frame(labrep = labrep, labtot = labtot)
 cat("Writing label file:",outlabs,"\n")
-write.table(labs, file=outlabs, row.names = FALSE, col.names = FALSE)
+write.table(labs, file=paste(outpath,"/",outlabs,sep=""), row.names = FALSE, col.names = FALSE)
