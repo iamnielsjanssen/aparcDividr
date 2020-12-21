@@ -25,6 +25,7 @@ These labels are increased by 27 for each additional region. For example, for th
 
 # recommended usage
 The resulting file could be used in a FSL processing pipeline using the following code:
+
 `fslmeants -i <file_with_FC_values> -o <FC_values>.txt --label=aparc+aseg_dividr.nii.gz --transpose`
 
 # comments
