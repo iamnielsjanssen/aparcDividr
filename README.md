@@ -21,7 +21,7 @@ The program first fits a boundary box to each area in the aparc+aseg atlas file.
 
 ![hippo](https://github.com/iamnielsjanssen/aparcDividr/blob/master/detail_labels.png)
 
-These labels are increased by 27 for each additional region. For example, for the first area (Left-Cerebellum-Cortex, 8), labels run from 1 to 27. Then for the next structure (Left-Thalamus-Proper, 10), labels run from 28 to 54. And so on for all 87 areas in the atlas. This results in a new aparc+aseg_dividr atlas file where each section has a unique label. Importantly, note that depending on the specific shape of the structure, not all labels may actually be present (thereby reducing the total number of regions present in the new atlas). For example, if a structure has a cyllindrical shape, labels in the superior section of the boundary box may not coincide with the shape and may not be present in the final atlas. 
+These labels are increased by 27 for each additional region. For example, for the first area (Left-Cerebellum-Cortex, 8), labels run from 1 to 27. Then for the next structure (Left-Thalamus-Proper, 10), labels run from 28 to 54. And so on for all 87 areas in the atlas. This results in a new aparc+aseg_dividr atlas file where each section has a unique label. Importantly, note that depending on the specific shape of the structure, not all labels may actually be present (thereby reducing the total number of regions present in the new atlas). For example, if a structure has a pyramidal shape, labels in the superior section of the boundary box may not coincide with the shape and may not be present in the final atlas. 
 
 # application example
 The resulting file could be used in a FSL processing pipeline using the following code:
